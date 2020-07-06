@@ -5,6 +5,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
 		<!-- config fragment 사용 -->
+		<th:block th:replace="fragments/common/commonConfig :: commonConfigFragment" ></th:block>
 		<th:block th:replace="fragments/main/mainConfig :: configFragment"></th:block>
 	</head>
 	<body>

@@ -5,6 +5,16 @@
 	  layout:decorator="layout/mainLayout">
 
 	<div layout:fragment="content">
-		<h1>Hello, World!</h1>
+		<div id="app">
+			<h1>{{hello}}</h1>
+		</div>
+		<script>
+			const paymentVM = new Vue({
+				el : "#app",
+				data : {
+					hello : "Hello, World!"
+				}
+			})
+		</script>
 	</div>
 </html>
