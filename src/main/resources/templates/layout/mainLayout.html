@@ -5,19 +5,22 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<head>
 		<!-- config fragment 사용 -->
-		<th:block th:replace="fragments/common/commonConfig :: commonConfigFragment" ></th:block>
 		<th:block th:replace="fragments/main/mainConfig :: configFragment"></th:block>
+		<th:block th:replace="fragments/common/commonConfig :: commonConfigFragment" ></th:block>
 	</head>
 	<body>
-		<!-- header fragment 사용 -->
-		<th:block th:replace="fragments/main/mainHeader :: headerFragment"></th:block>
-		<!--
-			content fragment 사용
-			현재 layout을 사용하는 content fragment의 내용을 삽입한다.
-		-->
-		<th:block layout:fragment="content"></th:block>
+		<div id="jb-container">
+			<!-- header fragment 사용 -->
+			<th:block th:replace="fragments/main/mainHeader :: headerFragment"></th:block>
+			<th:block th:replace="fragments/main/mainLeftNav :: leftNavFragment"></th:block>
+			<!--
+				content fragment 사용
+				현재 layout을 사용하는 content fragment의 내용을 삽입한다.
+			-->
+			<th:block layout:fragment="content"></th:block>
 
-		<!-- footer fragment 사용 -->
-		<th:block th:replace="fragments/main/mainFooter :: footerFragment"></th:block>
+			<!-- footer fragment 사용 -->
+			<th:block th:replace="fragments/main/mainFooter :: footerFragment"></th:block>
+		</div>
 	</body>
 </html>

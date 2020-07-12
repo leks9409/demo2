@@ -4,11 +4,9 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
     <head>
-        <meta charset="UTF-8" />
-        <title>로그인 / 회원가입 폼 템플릿</title>
         <!-- config fragment 사용 -->
-        <th:block th:replace="fragments/common/commonConfig :: commonConfigFragment" ></th:block>
         <th:block th:replace="fragments/login/loginConfig :: configFragment" ></th:block>
+        <th:block th:replace="fragments/common/commonConfig :: commonConfigFragment" ></th:block>
     </head>
     <body>
         <!-- header fragment 사용 -->

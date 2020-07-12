@@ -5,12 +5,12 @@
 	  layout:decorator="layout/loginLayout">
 
 	<div layout:fragment="content">
-		<div class="wrap">
+		<div class="wrap" id="loginApp">
 			<div class="form-wrap">
 				<div class="button-wrap">
 					<div id="btn"></div>
-					<button type="button" class="togglebtn" onclick="login()">LOG IN</button>
-					<button type="button" class="togglebtn" onclick="register()">REGISTER</button>
+					<button type="button" class="togglebtn" v-on:click="login">LOG IN</button>
+					<button type="button" class="togglebtn" v-on:click="register">REGISTER</button>
 				</div>
 				<div class="social-icons">
 					<img src="login/img/fb.png" alt="facebook">
@@ -21,7 +21,7 @@
 					<input type="text" class="input-field" placeholder="User name or Email" required>
 					<input type="password" class="input-field" placeholder="Enter Password" required>
 					<input type="checkbox" class="checkbox"><span>Remember Password</span>
-					<button class="submit" type="submit" >Login</button>
+					<button class="submit" type="button" v-on:click="testToIndex">Login</button>
 				</form>
 				<form id="register" action="" class="input-group">
 					<input type="text" class="input-field" placeholder="User name or Email" required>
@@ -33,25 +33,27 @@
 			</div>
 		</div>
 		<script>
-			var x = document.getElementById("login");
-			var y = document.getElementById("register");
-			var z = document.getElementById("btn");
+			const paymentVm = new Vue({
+				el : '#loginApp',
+				data : {
 
-
-			function login(){
-				x.style.left = "50px";
-				y.style.left = "450px";
-				z.style.left = "0";
-			}
-
-			function register(){
-				x.style.left = "-400px";
-				y.style.left = "50px";
-				z.style.left = "110px";
-			}
-
-
-
+				},
+				methods: {
+					testToIndex : function () {
+						location.href = "/home";
+					},
+					login : function() {
+						document.getElementById("login").style.left = "50px";
+						document.getElementById("register").style.left = "450px";
+						document.getElementById("btn").style.left = "0";
+					},
+					register :  function() {
+						document.getElementById("login").style.left = "-400px";
+						document.getElementById("register").style.left = "50px";
+						document.getElementById("btn").style.left = "110px";
+					}
+				}
+			});
 		</script>
 	</div>
 </html>
