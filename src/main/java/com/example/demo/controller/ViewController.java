@@ -15,7 +15,7 @@ public class ViewController {
 	@GetMapping("/home")
 	public String home() {
 
-		return "index";
+		return "views/user/contents";
 	}
 
 	@GetMapping("/userInfo")

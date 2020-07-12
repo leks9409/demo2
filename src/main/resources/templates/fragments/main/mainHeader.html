@@ -1,29 +1,6 @@
 <html lagn="ko"
       xmlns:th="http://www.thymeleaf.org">
     <!--headerFragment 선언-->
-    <div th:fragment="headerFragment" id="jb-header">
-        <div id="headerApp">
-            <h1 v-on:click="goToHome">Responsive Layout</h1>
-            <ul>
-                <li v-on:click="goToProfile">profile</li>
-                <li v-on:click="goToLogin">logout</li>
-            </ul>
-        </div>
-        <script>
-            const paymentVm = new Vue({
-               el : '#headerApp',
-               methods : {
-                   goToHome : function () {
-                       location.href = "/home";
-                   },
-                   goToLogin : function () {
-                        location.href = "/";
-                   },
-                   goToProfile : function () {
-                        location.href = "/userInfo";
-                   }
-               }
-            });
-        </script>
+    <div th:fragment="headerFragment">
     </div>
 </html>
