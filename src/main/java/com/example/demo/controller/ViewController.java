@@ -17,6 +17,11 @@ public class ViewController {
 
 		return "index";
 	}
-	
+
+	@GetMapping("/userInfo")
+	public String userInfo() {
+
+		return "views/user/userInfo";
+	}
 	
 }
